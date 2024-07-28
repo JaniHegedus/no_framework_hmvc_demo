@@ -1,0 +1,73 @@
+.sidebar {
+    /* Default Sidebar properties */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 7.5%;
+    background-color: #c5c5c5;
+    height: 100%;
+    width: 7%;
+    z-index: 200;
+    padding-top: 5px;
+    user-select: none;
+}
+
+.sidebar-link-this,
+.sidebar-link {
+    /* Default Sidebar-link/link-this properties */
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Active page styling */
+.sidebar-link-this {
+    /* Sidebar link-this (active) properties */
+    background: #e0dede;
+    pointer-events: none; /* Disable click events */
+    color: gray; /* Indicate the link is inactive */
+}
+
+/* Normal link styling */
+.sidebar-link {
+    /* Sidebar link properties */
+    background: transparent; /* Default background */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.sidebar-link:hover {
+    /* Sidebar link hover properties */
+    background: white;
+}
+
+.sidebar-link:active {
+    /* Sidebar link active properties */
+    background: lightgray;
+}
+
+.sidebar-link img,
+.sidebar-link-this img {
+    /* Sidebar link/image properties */
+    height: 30%;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div,
+.sidebar-link-this div {
+    /* Sidebar link/div properties */
+    font-size: 60%;
+}
+
+.bottom-aligner {
+    /* Default Bottom aligner properties */
+    height: 40%;
+}
+
+.creator {
+    /* Default Bottom aligner properties */
+    text-align: center;
+    height: 4%;
+}

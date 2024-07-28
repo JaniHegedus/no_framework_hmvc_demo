@@ -1,11 +1,14 @@
 <?php
 
 require_once 'application/config/config.php';
-require_once 'system/libraries/Database.php';
 
 // Load core classes
 foreach (glob('system/core/*.php') as $core) {
     require_once $core;
+}
+// Load libs
+foreach (glob('system/libraries/*.php') as $libraries) {
+    require_once $libraries;
 }
 
 // Routing
@@ -32,7 +35,16 @@ if (file_exists("application/controllers/$controllerName.php")) {
         die("Controller $controllerName not found!");
     }
 }
-
+$requestMethod = $_SERVER['REQUEST_METHOD'];
+// Adjust method name for POST requests based on the button name
+if ($requestMethod === 'POST') {
+    foreach ($_POST as $key => $value) {
+        if (method_exists($controller, $key)) {
+            $methodName = $key;
+            break;
+        }
+    }
+}
 if (method_exists($controller, $methodName)) {
     call_user_func_array([$controller, $methodName], $params);
 } else {

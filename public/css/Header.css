@@ -1,0 +1,154 @@
+.header {
+    /* Default Header properties */
+    height: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #c5c5c5;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    user-select: none;
+    padding: 0 20px; /* Optional padding for better spacing */
+}
+
+.left-section,
+.left-section-only {
+    /* Default Header left section properties */
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    width: 40%;
+}
+
+.left-section-only {
+    margin-left: 1%;
+}
+
+.page-name {
+    /* Default Page name properties */
+    margin: 0;
+    font-size: 1.5em; /* Adjust as needed */
+}
+
+.middle-section {
+    /* Default middle section properties */
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around; /* Space out the forms */
+    width: 60%;
+    flex: 1; /* Allow it to fill available space */
+    margin-left: auto; /* Push the section to the right */
+}
+
+.form-container {
+    /* Container for aligning forms in a row */
+    display: flex;
+    align-items: center;
+    flex: 1; /* Allow it to fill available space */
+}
+
+.form-container form {
+    /* Form styling */
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between forms */
+}
+
+.middle-section form {
+    /* Styling for individual forms in the middle section */
+    height: 100%;
+    display: flex;
+    flex-direction: row; /* Arrange input fields in a single line */
+    align-items: center; /* Vertically center items */
+}
+.form-creation,
+.form-deletion{
+    width: 100%;
+}
+.id-bar,
+.user-id-bar,
+.user-name-bar,
+.user-title-bar {
+    /* Default input bar properties */
+    height: 70%;
+    padding: 0 1%;
+    font-size: 100%;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.id-bar {
+    /* id bar only properties */
+    width: 8%; /* Increased width */
+}
+
+.user-id-bar {
+    /* user id bar only properties */
+    width: 10%; /* Increased width */
+}
+
+.user-title-bar {
+    /* user title bar only properties */
+    flex: 1; /* Make title bar flexible */
+    height: 70%;
+    padding: 0 3%;
+}
+
+.minus-button,
+.plus-button {
+    /* Default Plus/Minus Button properties */
+    height: 70%;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(192, 192, 192);
+    margin-left: 2px; /* Adjusted margin */
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.minus-button:active,
+.plus-button:active {
+    /* Default Plus/Minus Button active properties */
+    background: lightgray;
+}
+
+.plus-button .tooltip,
+.minus-button .tooltip {
+    /* Plus/Minus Button tooltip properties */
+    position: absolute;
+    background-color: #a9a7a7;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom: 100%; /* Adjusted tooltip position */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.plus-button:hover .tooltip,
+.minus-button:hover .tooltip {
+    /* Default Plus/Minus Button hover tooltip properties */
+    opacity: 1;
+}
+
+.minus-icon,
+.plus-icon {
+    /* Default Plus/Minus icon properties */
+    height: 80%;
+}

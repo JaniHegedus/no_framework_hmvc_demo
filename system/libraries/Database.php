@@ -6,6 +6,7 @@ class Database {
     private $password;
     private $database;
     private $connection;
+    private static $instance = null;
 
     public function __construct() {
         global $config;
@@ -22,7 +23,17 @@ class Database {
             die("Connection failed: " . $this->connection->connect_error);
         }
     }
+    public static function getInstance() {
+        if (self::$instance == null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
 
+    // Method to get the database connection
+    public function getConnection() {
+        return $this->connection;
+    }
     public function query($sql) {
         return $this->connection->query($sql);
     }

@@ -5,6 +5,6 @@ class HomeController extends Controller {
     public function index() {
         $this->loadModel('HomeModel');
         $data['message'] = $this->HomeModel->getMessage();
-        $this->loadView('home/index', $data);
+        $this->loadView('index', $data);
     }
 }
