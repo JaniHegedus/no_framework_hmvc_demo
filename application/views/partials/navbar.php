@@ -17,23 +17,23 @@ if (!in_array($currentPage, $validPages)) {
 
 <nav class="sidebar">
     <!-- Moving Between Pages -->
-    <a href="/no_framework/" class="<?= $currentPage === 'home' ? 'disabled' : '' ?>">
+    <a href="/" class="<?= $currentPage === 'home' ? 'disabled' : '' ?>">
         <div class="sidebar-link <?= $currentPage === 'home' ? 'sidebar-link-this' : '' ?>">
-            <img src="/no_framework/public/images/icons/iconmonstr-home-6.svg" alt="Home">
+            <img src="/public/images/icons/iconmonstr-home-6.svg" alt="Home">
             <div>Home</div>
         </div>
     </a>
 
-    <a href="/no_framework/advertisements" class="<?= $currentPage === 'advertisements' ? 'disabled' : '' ?>">
+    <a href="/advertisements" class="<?= $currentPage === 'advertisements' ? 'disabled' : '' ?>">
         <div class="sidebar-link <?= $currentPage === 'advertisements' ? 'sidebar-link-this' : '' ?>">
-            <img src="/no_framework/public/images/icons/explore.svg" alt="Explore Advertises">
+            <img src="/public/images/icons/explore.svg" alt="Explore Advertises">
             <div>Explore Advertises</div>
         </div>
     </a>
 
-    <a href="/no_framework/user" class="<?= $currentPage === 'user' ? 'disabled' : '' ?>">
+    <a href="/user" class="<?= $currentPage === 'user' ? 'disabled' : '' ?>">
         <div class="sidebar-link <?= $currentPage === 'user' ? 'sidebar-link-this' : '' ?>">
-            <img src="/no_framework/public/images/icons/iconmonstr-user-circle-thin.svg" alt="Explore Users">
+            <img src="/public/images/icons/iconmonstr-user-circle-thin.svg" alt="Explore Users">
             <div>Explore Users</div>
         </div>
     </a>

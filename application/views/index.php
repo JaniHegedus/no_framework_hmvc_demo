@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="/no_framework/public/css/General.css">
-    <link rel="stylesheet" href="/no_framework/public/css/Sidebar.css">
-    <link rel="stylesheet" href="/no_framework/public/css/Header.css">
+    <link rel="stylesheet" href="/public/css/General.css">
+    <link rel="stylesheet" href="/public/css/Sidebar.css">
+    <link rel="stylesheet" href="/public/css/Header.css">
     <script src="/no_framework/public/js/alerts.js"></script>
 </head>
 <body>

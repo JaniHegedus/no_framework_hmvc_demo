@@ -21,6 +21,24 @@ $controllerName = ucfirst($module) . 'Controller';
 $methodName = isset($url[1]) ? $url[1] : 'index';
 $params = array_slice($url, 2);
 
+$errorControllerName = 'ErrorController';
+$errorMethodName = 'notFound';
+
+function handleError($message) {
+    global $errorControllerName, $errorMethodName;
+    if (file_exists("application/controllers/$errorControllerName.php")) {
+        require_once "application/controllers/$errorControllerName.php";
+        $errorController = new $errorControllerName;
+        if (method_exists($errorController, $errorMethodName)) {
+            call_user_func_array([$errorController, $errorMethodName], [$message]);
+        } else {
+            die("Error method $errorMethodName not found in $errorControllerName!");
+        }
+    } else {
+        die($message);
+    }
+}
+
 // Check if the controller exists in the main application controllers
 if (file_exists("application/controllers/$controllerName.php")) {
     require_once "application/controllers/$controllerName.php";
@@ -32,9 +50,11 @@ if (file_exists("application/controllers/$controllerName.php")) {
         require_once $moduleControllerPath;
         $controller = new $controllerName($module); // Pass the module name to the controller
     } else {
-        die("Controller $controllerName not found!");
+        handleError("Controller $controllerName not found!");
+        exit;
     }
 }
+
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 // Adjust method name for POST requests based on the button name
 if ($requestMethod === 'POST') {
@@ -45,8 +65,10 @@ if ($requestMethod === 'POST') {
         }
     }
 }
+
 if (method_exists($controller, $methodName)) {
     call_user_func_array([$controller, $methodName], $params);
 } else {
-    die("Method $methodName not found!");
+    handleError("Method $methodName not found!");
 }
+
